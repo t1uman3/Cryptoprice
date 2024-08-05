@@ -12,13 +12,13 @@ app = FastAPI()
 @app.get("/")
 def root():
     return {
-        "app": "price-viewer",
+        "app": "crypto-price",
         "message": "backend is ready",
         "version": "0.1.0"
     }
 
 
-@app.get("/cryptocurrency")
+@app.get("/crypto")
 async def get_prices():
     try:
         async with httpx.AsyncClient() as client:
@@ -26,6 +26,11 @@ async def get_prices():
             response_coindesk = await client.get("https://api.coindesk.com/v1/bpi/currentprice/USD.json")
             response_coindesk.raise_for_status()  # Проверка статуса ответа
             data_coindesk = response_coindesk.json()
+
+            # Запрос к CoinCap API для получения текущей цены эфира
+            response_coincap = await client.get("https://api.coincap.io/v2/assets/ethereum")
+            response_coincap.raise_for_status()  # Проверка статуса ответа
+            data_coincap = response_coincap.json()
 
 
             # Запрос к API ЦБ РФ для получения курса доллара к рублю
@@ -42,10 +47,20 @@ async def get_prices():
             # Конвертация цены биткоина в рубли
             bitcoin_rub = bitcoin_usd * usd_to_rub
 
+            # Цена эфира в долларах
+            ethereum_usd = float(data_coincap["data"]["priceUsd"])
+
+            # Конвертация цены эфира в рубли
+            ethereum_rub = ethereum_usd * usd_to_rub
+
             return {
                 "bitcoin": {
                     "usd": bitcoin_usd,
                     "rub": bitcoin_rub
+                },
+                "ethereum": {
+                    "usd": ethereum_usd,
+                    "rub": ethereum_rub
                 }
 
             }
