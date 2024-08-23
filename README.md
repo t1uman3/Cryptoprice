@@ -1,4 +1,4 @@
-![Weather Logo](frontend/public/bit.png)
+![Crypto Logo](frontend/public/bit.png)
 # Crypto Price
 
 To start the project you need
