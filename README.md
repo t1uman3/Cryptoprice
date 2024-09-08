@@ -5,8 +5,7 @@ To start the project you need
 - running Docker
 - use a terminal that supports Unix commands such as Git Bash
 - backend 8000 port frontend 3000 port
-
-
+- replace your COINMARKETCAP API key in the file .env and rename file
 
 ## Run Locally
 
