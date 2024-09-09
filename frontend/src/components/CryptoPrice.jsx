@@ -65,7 +65,7 @@ const CryptoPrice = () => {
           })}</p>
         </div>
         <div className="BitcoinPrice bg-white p-6 rounded-lg shadow-lg mb-4">
-          <h1 className="text-2xl font-bold mb-4">Ethereum Prices</h1>
+          <h1 className="text-2xl font-bold mb-4">TON Prices</h1>
           <p className="text-lg">USD: ${prices.ton.usd.toLocaleString(undefined, {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
