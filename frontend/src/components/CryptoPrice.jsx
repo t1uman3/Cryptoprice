@@ -43,7 +43,7 @@ const CryptoPrice = () => {
     <div className="body flex justify-end bg-gray-100 p-6">
       <div className="w-1/4">
         <div className="BitcoinPrice bg-white p-6 rounded-lg shadow-lg mb-4">
-          <h1 className="text-2xl font-bold mb-4">Bitcoin Prices</h1>
+          <h1 className="text-2xl font-bold mb-4">Bitcoin</h1>
           <p className="text-lg">USD: ${prices.bitcoin.usd.toLocaleString(undefined, {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
@@ -54,7 +54,7 @@ const CryptoPrice = () => {
           })}</p>
         </div>
         <div className="BitcoinPrice bg-white p-6 rounded-lg shadow-lg mb-4">
-          <h1 className="text-2xl font-bold mb-4">Ethereum Prices</h1>
+          <h1 className="text-2xl font-bold mb-4">Ethereum</h1>
           <p className="text-lg">USD: ${prices.ethereum.usd.toLocaleString(undefined, {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
@@ -65,7 +65,7 @@ const CryptoPrice = () => {
           })}</p>
         </div>
         <div className="BitcoinPrice bg-white p-6 rounded-lg shadow-lg mb-4">
-          <h1 className="text-2xl font-bold mb-4">TON Prices</h1>
+          <h1 className="text-2xl font-bold mb-4">TON</h1>
           <p className="text-lg">USD: ${prices.ton.usd.toLocaleString(undefined, {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
